@@ -1,0 +1,10 @@
+services:
+  streams:
+    build: ./server
+    environment: 
+      - "PARAMETERS=rtsp://admin:123456@192.168.20.10:554/ch07/01 driveway"
+      # - "PARAMETERS=rtsp://admin:123456@192.168.20.10:554/ch01/01 frontyard rtsp://admin:123456@192.168.20.10:554/ch07/01 driveway"
+    ports:
+      - "8080:80"
+    volumes:
+      - ./tmp:/tmp
